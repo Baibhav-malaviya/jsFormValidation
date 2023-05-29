@@ -6,6 +6,7 @@ inputs.forEach((input)=>{
 
 
 function showError(){
+   const btn = document.querySelector('input[type="submit"]');
    const selector = this.id;
 
 
@@ -13,9 +14,11 @@ function showError(){
    if(selector=="name"){
     const name = document.querySelector(`#${selector}`).value;
     if(name.length < 5 && !/[0-9]/.test(name)){
+        btn.classList.add('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="*Name must be at least 5 characters";
         document.querySelector(`#${selector}`).style.border="2px solid red"
     }else{
+        btn.classList.remove('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="";
         document.querySelector(`#${selector}`).style.border="2px solid green"
     }
@@ -30,9 +33,11 @@ function showError(){
     const _index2=mail.indexOf('.');
     console.log();
     if(mail.includes('@')&& mail.includes('.') && mail.slice(mail.length-2,mail.length) != '..' && (mail.length-_index1) > 9 && (mail.length-_index2) > 2  ){
+        btn.classList.remove('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="";
         document.querySelector(`#${selector}`).style.border="2px solid green"
     }else{
+        btn.classList.add('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="*Please enter a valid email address";
         document.querySelector(`#${selector}`).style.border="2px solid red"
     }
@@ -47,9 +52,11 @@ function showError(){
     const isValidNum = digits.every((digit)=>!isNaN(digit));
     console.log(isValidNum);
     if(isValidNum && telephone.length>=10 && telephone.length<=14){
+        btn.classList.remove('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="";
         document.querySelector(`#${selector}`).style.border="2px solid green"
     }else{
+        btn.classList.add('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="*Please enter a valid telephone number";
         document.querySelector(`#${selector}`).style.border="2px solid red"
     }
@@ -62,9 +69,11 @@ function showError(){
    if(selector=='password'){
     const password = document.querySelector(`#${selector}`).value;
     if(password.length>=8 && /[a-z]/.test(password) && /[A-Z]/.test(password) && /[0-9]/.test(password) && /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password)){
+        btn.classList.remove('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="";
         document.querySelector(`#${selector}`).style.border="2px solid green"
     }else{
+        btn.classList.add('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="*password must be at least 8 characters and contains a number and special characters";
         document.querySelector(`#${selector}`).style.border="2px solid red"
     }
@@ -80,9 +89,11 @@ function showError(){
     const password = document.querySelector('#password').value;
     const confirmPassword = document.querySelector(`#${selector}`).value;
     if(password==confirmPassword){
+        btn.classList.remove('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="";
         document.querySelector(`#${selector}`).style.border="2px solid green"
     }else{
+        btn.classList.add('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="*Enter same as the password";
         document.querySelector(`#${selector}`).style.border="2px solid red"
     }
@@ -91,6 +102,9 @@ function showError(){
    
 }
 
+
+
+ console.log(btn);
 // const regex = new RegExp('[a-z]','g');
 
 // let string = "f9A"

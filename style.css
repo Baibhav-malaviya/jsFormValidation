@@ -88,4 +88,15 @@ body{
 }
 
 
+.mainContainer form input.noPointer{
+    /* pointer-events: none; */
+    cursor: not-allowed;
+    opacity: .2;
+    
+}
+.mainContainer form input.noPointer:hover{
+    cursor: not-allowed;
+}
+
+
 
