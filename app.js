@@ -39,11 +39,11 @@ app.post('/',(req,res)=>{
     Form.find({}).then((data)=>{
         if(!data.some(d=> d.email===email || d.telephone===telephone)){
             Form.insertMany([userInfo]).then((data)=>{
-                alert(` Registered successfully. `);
+                console.log(` Registered successfully. `);
                 
             });
         }else{
-            alert(`This email or phone is already in use. Go to log in .`);
+            console.log(`This email or phone is already in use. Go to log in .`);
         }
     });
     
