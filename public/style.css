@@ -10,10 +10,66 @@ body{
     align-items: center;
     justify-content: center;
     padding: 50px auto;
+    background-color: #fff;
+   
+}
+.alert-success{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    width: 30vw;
+    height: 30vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: large;
+    color: green;
+    display: none;
+}
+.alert-failure{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    width: 30vw;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: large;
+    color: red;
+    display: none;
+}
+
+.btn{
+    padding: 3px 5px;
+    border: none;
+    outline: none;
+    border: 2px solid rgb(34, 32, 32);
+    border-radius: 10px;
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    cursor: pointer;
+}
+.btn:hover{
+    opacity: .7;
+}
+.success-btn{
+    background-color: green;
+}
+.danger-btn{
+    background-color: red;
 }
 .mainContainer{
     height: auto;
-    width: 40%;
+    width:max(40%,300px);
     background-color: hsl(0, 0%, 100%);
 }
 .mainContainer h1{
@@ -30,7 +86,7 @@ body{
 .mainContainer form{
     height: auto;
     width: 100%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     margin-bottom: 20px;
     background-color: hsl(0, 11%, 90%);
     border-radius: 5px;
@@ -51,15 +107,15 @@ body{
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    margin:0 auto;
+    margin: 0 auto;
 }
 .mainContainer form input[type='submit']{
-    height:25px ;
-    background-color: hsl(120, 79%, 50%);
+    height:35px ;
+    background-color: hsl(120, 79%, 40%);
     border: 2px sloid grey;
 }
 .mainContainer form input[type='submit']:hover{
-    background-color: hsl(120, 79%, 40%);
+    background-color: hsl(120, 79%, 38%);
     cursor: pointer;
 }
 .mainContainer form input::placeholder{
@@ -98,5 +154,10 @@ body{
     cursor: not-allowed;
 }
 
-
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
 
