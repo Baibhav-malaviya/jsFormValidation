@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const notifier = require('node-notifier');
 
 
 
@@ -39,11 +40,11 @@ app.post('/',(req,res)=>{
     Form.find({}).then((data)=>{
         if(!data.some(d=> d.email===email || d.telephone===telephone)){
             Form.insertMany([userInfo]).then((data)=>{
-                console.log(` Registered successfully. `);
+                notifier.notify('Registered successfully.');
                 
             });
         }else{
-            console.log(`This email or phone is already in use. Go to log in .`);
+            notifier.notify(`This email or phone is already in use. Go to log in .`);
         }
     });
     

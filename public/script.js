@@ -1,3 +1,4 @@
+
 const inputs = document.querySelectorAll('input');
 inputs.forEach((input)=>{
     input.addEventListener('change',showError);
