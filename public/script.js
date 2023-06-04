@@ -105,7 +105,7 @@ function showError(){
 
 
 
- console.log(btn);
+
 // const regex = new RegExp('[a-z]','g');
 
 // let string = "f9A"
@@ -142,3 +142,16 @@ function showError(){
 // const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 // //Test the email against the pattern
 // return pattern.test(email);
+
+
+const giveFeedback = document.querySelector('#formSubmit');
+    giveFeedback.addEventListener('click', () =>{
+    setTimeout(() => {
+        document.querySelector('.alert-success').classList.add('show');
+    }, 2000);
+    })
+
+document.querySelector('.success-btn').addEventListener('click', () =>{
+    location.reload();
+})
+

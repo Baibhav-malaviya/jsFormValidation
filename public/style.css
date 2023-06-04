@@ -18,17 +18,19 @@ body{
     left: 50%;
     top: 50%;
     translate: -50% -50%;
-    width: 30vw;
+    width: max(30vw,280px);
     height: 30vh;
     background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    font-weight: 400;
-    font-size: large;
+    font-weight: bolder;
+    font-size: larger;
+    font-family:Arial, Helvetica, sans-serif;
     color: green;
     display: none;
+    box-shadow: inset 0px 0px 18px 8px rgba(0,0,0,.3);
 }
 .alert-failure{
     position: absolute;
@@ -48,21 +50,23 @@ body{
 }
 
 .btn{
-    padding: 3px 5px;
+    padding: 5px 10px;
     border: none;
     outline: none;
-    border: 2px solid rgb(34, 32, 32);
-    border-radius: 10px;
+    /* border: 1px solid rgb(34, 32, 32); */
+    color: white;
+    border-radius: 6px;
     position: absolute;
     right: 10%;
     bottom: 10%;
     cursor: pointer;
+    box-shadow: inset 0px 0px 2px 3px rgba(0,0,0,.3);
 }
 .btn:hover{
     opacity: .7;
 }
 .success-btn{
-    background-color: green;
+    background-color: rgb(22, 174, 22);
 }
 .danger-btn{
     background-color: red;
@@ -155,7 +159,7 @@ body{
 }
 
 .show{
-    display: block;
+    display: flex;
 }
 .hide{
     display: none;
