@@ -1,0 +1,41 @@
+header{
+    position: absolute;
+    height: 50px;
+    inset: 0;
+    background-color: rgb(238, 245, 103);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header>div{
+    margin: auto 20px;
+}
+header .right nav ul {
+    display: flex;
+}
+header .right nav ul li{
+    margin: auto 10px;
+    list-style-type: none;
+}
+header .right nav ul li div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+    height:35px ;
+    width: 140px;
+    /* padding: 5px ; */
+    border-radius: 20px;
+}
+header .right nav ul li div div{
+    height: inherit;
+    width: 50%;
+    /* margin: auto 10px; */
+    border-radius: 20px;
+}
+header .right nav ul li div div:hover a{
+    cursor: pointer;
+    /* box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4); */
+    color: yellow;
+    /* z-index: 1; */
+}

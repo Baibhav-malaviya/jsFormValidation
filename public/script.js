@@ -1,4 +1,7 @@
 
+//!===========CODE FOR FORM VALIDATION===========//
+
+
 const inputs = document.querySelectorAll('input');
 inputs.forEach((input)=>{
     input.addEventListener('change',showError);
@@ -11,17 +14,18 @@ function showError(){
    const selector = this.id;
 
 
-
    if(selector=="name"){
     const name = document.querySelector(`#${selector}`).value;
     if(name.length < 5 && !/[0-9]/.test(name)){
         btn.classList.add('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="*Name must be at least 5 characters";
         document.querySelector(`#${selector}`).style.border="2px solid red"
+        document.querySelector(`#${selector}`).style.background="rgba(255,0,0,.03)"
     }else{
         btn.classList.remove('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="";
         document.querySelector(`#${selector}`).style.border="2px solid green"
+        document.querySelector(`#${selector}`).style.background="rgba(0,255,0,.03)"
     }
    }
     
@@ -37,10 +41,12 @@ function showError(){
         btn.classList.remove('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="";
         document.querySelector(`#${selector}`).style.border="2px solid green"
+        document.querySelector(`#${selector}`).style.background="rgba(0,255,0,.03)"
     }else{
         btn.classList.add('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="*Please enter a valid email address";
         document.querySelector(`#${selector}`).style.border="2px solid red"
+        document.querySelector(`#${selector}`).style.background="rgba(255,0,0,.03)"
     }
    }
 
@@ -56,10 +62,12 @@ function showError(){
         btn.classList.remove('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="";
         document.querySelector(`#${selector}`).style.border="2px solid green"
+        document.querySelector(`#${selector}`).style.background="rgba(0,255,0,.03)"
     }else{
         btn.classList.add('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="*Please enter a valid telephone number";
         document.querySelector(`#${selector}`).style.border="2px solid red"
+        document.querySelector(`#${selector}`).style.background="rgba(255,0,0,.03)"
     }
    }
     
@@ -73,10 +81,12 @@ function showError(){
         btn.classList.remove('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="";
         document.querySelector(`#${selector}`).style.border="2px solid green"
+        document.querySelector(`#${selector}`).style.background="rgba(0,255,0,.03)"
     }else{
         btn.classList.add('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="*password must be at least 8 characters and contains a number and special characters";
         document.querySelector(`#${selector}`).style.border="2px solid red"
+        document.querySelector(`#${selector}`).style.background="rgba(255,0,0,.03)"
     }
 
    }
@@ -93,10 +103,12 @@ function showError(){
         btn.classList.remove('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="";
         document.querySelector(`#${selector}`).style.border="2px solid green"
+        document.querySelector(`#${selector}`).style.background="rgba(0,255,0,.03)"
     }else{
         btn.classList.add('noPointer');
         document.querySelector(`#${selector} + div`).innerHTML="*Enter same as the password";
         document.querySelector(`#${selector}`).style.border="2px solid red"
+        document.querySelector(`#${selector}`).style.background="rgba(255,0,0,.03)"
     }
    }
 
@@ -143,6 +155,8 @@ function showError(){
 // //Test the email against the pattern
 // return pattern.test(email);
 
+//!Code for the alert box
+
 
 const giveFeedback = document.querySelector('#formSubmit');
     giveFeedback.addEventListener('click', () =>{
@@ -154,4 +168,34 @@ const giveFeedback = document.querySelector('#formSubmit');
 document.querySelector('.success-btn').addEventListener('click', () =>{
     location.reload();
 })
+
+
+
+//? ================CODE FOR TOGGLE BETWEEN LOGIN AND REGISTRATION=====================
+
+
+const login = document.querySelector('#loginIcon');
+const registration = document.querySelector('#registrationIcon');
+const createNew=document.querySelector('.mainContainer form.login-form div h1');
+
+
+login.addEventListener('click', function(){
+    registration.style.boxShadow = 'none';
+    registration.style.zIndex='0';
+    this.style.boxShadow = '0 0 5px 0 rgba(0, 0, 0, 0.4)'
+    this.style.zIndex = '1';
+    document.querySelector('.mainContainer form.registration-form').style.display = 'none';
+    document.querySelector('.mainContainer form.login-form').style.display='flex';
+});
+registration.addEventListener('click', registrationClick);
+createNew.addEventListener('click',registrationClick);
+
+function registrationClick(){
+    login.style.boxShadow = 'none';
+    login.style.zIndex='0';
+    this.style.boxShadow = '0 0 5px 0 rgba(0, 0, 0, 0.4)'
+    this.style.zIndex='1';
+    document.querySelector('.mainContainer form.registration-form').style.display = 'flex';
+    document.querySelector('.mainContainer form.login-form').style.display='none';
+}
 

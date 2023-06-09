@@ -5,7 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
     <link rel="shortcut icon" href="myIcon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Form validation</title>
   </head>
   <body>
@@ -15,9 +23,31 @@
     <div class="alert-failure">
       Something went wrong <button class="btn danger-btn">Try again</button>
     </div>
+    <header>
+      <div class="left"><h1>LOGO</h1></div>
+      <div class="right">
+        <nav>
+          <ul>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>
+              <div>
+                <div class="hover" id="loginIcon"><a href="#">LogIn</a></div>
+                <div id="registrationIcon"><a href="#">Register</a></div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <div class="mainContainer">
-      <h1>Form and signUp validation</h1>
-      <form action="/" method="post" name="myForm">
+      <!-- <h1>Form and signUp validation</h1> -->
+      <form
+        action="/register"
+        method="post"
+        class="registration-form"
+        name="registrationForm"
+      >
         <div class="inputBox">
           <input
             required
@@ -80,6 +110,24 @@
 
         <input id="formSubmit" type="submit" name="submit" value="Submit" />
       </form>
+      <form action="/login" class="login-form" method="post" name="loginForm">
+        <input type="email" name="mail" id="mail" placeholder="E-mail" required>
+        <input type="password" name="password" id="password" placeholder="password" required>
+        <input type="submit" value="LogIn">
+        <div class="forgotten-password-and-registration">
+          <a href="#">Forgotten Password ?</a>
+          <hr>
+          <h1><a href="#">Create New Account</a></h1>
+        </div>
+      </form>
+      <section class="option">
+        <h2>Malaviya Production</h2>
+        <div class="production-house-icons">
+          <a href=""><i class="fa-brands fa-instagram fa-3x"></i></a>
+          <a href=""><i class="fa-brands fa-facebook fa-3x"></i></a>
+          <a href=""><i class="fa-brands fa-linkedin fa-3x"></i></a>
+        </div>
+      </section>
     </div>
   </body>
   <script src="script.js"></script>

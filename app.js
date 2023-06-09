@@ -22,7 +22,7 @@ const formSchema = new mongoose.Schema({
 const Form = mongoose.model('Form',formSchema);
 
 
-app.post('/',(req,res)=>{
+app.post('/register',(req,res)=>{
     const name = req.body.name;
     const email = req.body.mail;
     const telephone = req.body.tel;
@@ -50,6 +50,26 @@ app.post('/',(req,res)=>{
     
     
     
+})
+
+app.post('/login',(req,res)=>{
+    const mail = req.body.mail;
+    const password = req.body.password;
+    Form.find().then((data)=>{
+        if(data.some((d)=>d.email===mail)){
+            Form.findOne({email:mail}).then((d)=>{
+                if(d.password == password){
+                    // notifier.notify("Loged in successfully");
+                    res.render('login');
+                }else{
+                    notifier.notify("Wrong password. Please try again.");
+                } 
+            })
+        }else{
+            // notifier.notify("Email is not found. Please register first.");
+            res.send("Hello guys!");
+        }
+    })
 })
 
 

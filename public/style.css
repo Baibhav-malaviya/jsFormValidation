@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+}
 body{
     width: 100vw;
     min-height: 100vh;
@@ -11,6 +14,7 @@ body{
     justify-content: center;
     padding: 50px auto;
     background-color: #fff;
+    background: url('form-background-image.jpg') cover no-repeat fixed top left;
    
 }
 .alert-success{
@@ -72,9 +76,13 @@ body{
     background-color: red;
 }
 .mainContainer{
-    height: auto;
-    width:max(40%,300px);
+    box-shadow: 0 0 0 20px  hsl(0, 11%, 90%);
+    height: 360px;
+    min-height: auto;
+    width: 60%;
+    /* outline: 1px solid red; */
     background-color: hsl(0, 0%, 100%);
+    display: flex;
 }
 .mainContainer h1{
     height: 15%;
@@ -88,12 +96,12 @@ body{
     border-radius: 5px;
 }
 .mainContainer form{
-    height: auto;
-    width: 100%;
+    height: inherit;
+    width:max(60%,420px);
     /* margin: 0 auto; */
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     background-color: hsl(0, 11%, 90%);
-    border-radius: 5px;
+    border-radius:0 10px 10px 0;
     padding: 10px 0;
     display: flex;
     align-items: center;
@@ -157,11 +165,79 @@ body{
 .mainContainer form input.noPointer:hover{
     cursor: not-allowed;
 }
+.mainContainer form.registration-form{
+    display: none;
+}
+.mainContainer form.login-form{
+    /* display: none; */
+
+}
+.mainContainer form.login-form input{
+    margin: 10px auto;
+}
+.mainContainer form.login-form div{
+    width: 90%;
+    height: auto;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.mainContainer form.login-form div>a{
+    color: yellow;
+    margin: 15px;
+}
+.mainContainer form.login-form div hr{
+    width: 90%;
+}
+.mainContainer form.login-form div h1{
+    margin-top: 20px;
+    height: auto;
+    background-color: yellow;
+    padding: 5px;
+}
+.mainContainer .option{
+    background-color: white;
+    width: 40%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.mainContainer .option *{
+    margin: 20px auto;
+}
+.mainContainer .option i{
+    margin: auto 10px;
+    /* box-shadow: 0 0 15px 0; */
+    /* padding: 5px; */
+    color: hsl(66, 100%, 60%);
+    border-radius: 60%;
+}
+.mainContainer .option span{
+    /* height: auto; */
+    /* aspect-ratio: 1; */
+    /* outline: 1px solid red; */
+}
 
 .show{
     display: flex;
 }
 .hide{
     display: none;
+}
+.hover{
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+.valid-input{
+    border: green 2px solid;
+    background-color: hsla(120, 100%, 25%,.4);
+}
+.invalid-input{
+    border: 2px solid red;
+    background-color: hsla(0, 100%, 50%,.4);
 }
 
